@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import HomeScreen from "./screens/HomeScreen";
 import { Container } from "react-bootstrap";
-import LoginScreen from "./screens/LoginScreen";
+import {HomeScreen} from "./screens/HomeScreen";
+import {LoginScreen} from "./screens/LoginScreen";
 
 import './App.css';
 
@@ -9,7 +9,8 @@ function App() {
   return (
     <>
     <Router>
-    <Route>
+    
+
       {/* If Header. Goes here. */}
       
 
@@ -19,7 +20,7 @@ function App() {
         </Container>
       
       
-    </Route>
+
     </Router>
     </>
   );
