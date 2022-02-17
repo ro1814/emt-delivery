@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Form, Button, Row, Col, Nav } from "react-bootstrap";
+import { Form, Button, Container, Row, Col, Nav } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { login } from "../actions/userActions";
 import FormContainer from "../components/FormContainer";
+import {ContainerStyled} from '../styles/LoginStyles'
 
 const LoginScreen = ({ location, history }) => {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,8 +32,9 @@ const LoginScreen = ({ location, history }) => {
   };
 
   return (
-    <>    
-    
+    <>
+    <ContainerStyled>
+    <Container>
     <FormContainer>
       <h1>EMT-Delivery</h1>
       <h2>Log in</h2>
@@ -73,6 +76,8 @@ const LoginScreen = ({ location, history }) => {
         </Col>
       </Row> */}
     </FormContainer>
+    </Container>
+    </ContainerStyled>
     </>
   );
 };
