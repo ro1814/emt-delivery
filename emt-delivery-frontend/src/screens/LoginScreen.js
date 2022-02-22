@@ -6,6 +6,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { login } from "../actions/userActions";
 import FormContainer from "../components/FormContainer";
+import {} from '../styles/LoginStyles.css'
 import {ContainerStyled} from '../styles/LoginStyles'
 
 const LoginScreen = ({ location, history }) => {
@@ -41,9 +42,9 @@ const LoginScreen = ({ location, history }) => {
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
 
-      <Form onSubmit={submitHandler} className='header-login__gradient--down'>
+      <Form onSubmit={submitHandler}>
         <Form.Group controlId="email">
-          <Form.Label><i className="far fa-envelope"></i>Email</Form.Label>
+          <Form.Label> <i className="far fa-envelope iconStyles"></i>Email</Form.Label>
           <Form.Control
             type="email"
             placeholder="Email..."
@@ -53,7 +54,7 @@ const LoginScreen = ({ location, history }) => {
         </Form.Group>
 
         <Form.Group controlId="password">
-          <Form.Label><i className="fas fa-lock"></i>Password</Form.Label>
+          <Form.Label><i className="fas fa-lock iconStyles"></i>Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Password..."
