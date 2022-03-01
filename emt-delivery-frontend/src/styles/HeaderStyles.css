@@ -1,0 +1,11 @@
+.headerDiv {
+    width: 100%;
+    height: 10%;
+    background-color: #5463FF;
+}
+.title{
+    color: white;
+    display: flex;
+    height: 10%;
+    padding: 5%;
+}

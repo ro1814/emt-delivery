@@ -6,7 +6,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { login } from "../actions/userActions";
 import FormContainer from "../components/FormContainer";
-import {} from '../styles/LoginStyles.css'
+import '../styles/LoginStyles.css'
 import {ContainerStyled} from '../styles/LoginStyles'
 
 const LoginScreen = ({ location, history }) => {
@@ -37,14 +37,14 @@ const LoginScreen = ({ location, history }) => {
     <ContainerStyled>
     <Container>
     <FormContainer>
-      <h1>EMT-Delivery</h1>
-      <h2>Log in</h2>
+
+      <h1 className="loginTitle">Log in</h1>
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
 
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="email">
-          <Form.Label> <i className="far fa-envelope iconStyles"></i>Email</Form.Label>
+          <Form.Label className="formLabel"><i className="far fa-envelope iconStyles"></i>Email</Form.Label>
           <Form.Control
             type="email"
             placeholder="Email..."
@@ -54,8 +54,9 @@ const LoginScreen = ({ location, history }) => {
         </Form.Group>
 
         <Form.Group controlId="password">
-          <Form.Label><i className="fas fa-lock iconStyles"></i>Password</Form.Label>
+          <Form.Label className="formLabel"><i className="fas fa-lock iconStyles"></i>Password</Form.Label>
           <Form.Control
+            className="loginInput"
             type="password"
             placeholder="Password..."
             value={password}
@@ -63,8 +64,8 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary" className='btn btn-dark btn-block loginBtn'>
-          Log in.
+        <Button type="submit" className='loginBtn col-md-12'>
+          LOG IN
         </Button>
       </Form>
 

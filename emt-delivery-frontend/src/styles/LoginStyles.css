@@ -4,7 +4,7 @@
 }
 
 .loginBtn {
-    align-content: center;
-    margin: 5px;
-    padding: 5px;
+    background-color: #5463FF !important;
+    color: white;
+    margin-top: 10%;
 }

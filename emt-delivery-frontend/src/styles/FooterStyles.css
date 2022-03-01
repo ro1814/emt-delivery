@@ -1,0 +1,10 @@
+.footerDiv {
+    width: 100%;
+    height: 300px;
+    background-color: #5463FF;
+}
+.contactUs{
+    color: white;
+    display: flex;
+    padding: 5%;
+}
