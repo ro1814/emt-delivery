@@ -11,3 +11,13 @@
 .checkBox {
     font-weight: bold;
 }
+
+.dlBtn {
+    float: inherit;
+    position: relative;
+}
+
+.form-control {
+    width: 90%;
+    display: inline-flex;
+}
