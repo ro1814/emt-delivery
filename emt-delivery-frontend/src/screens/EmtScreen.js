@@ -1,28 +1,44 @@
-import React from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import React, { useState } from "react";
 import "../styles/EmtScreenStyles.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload } from '@fortawesome/free-solid-svg-icons'
+import { Button, Container, Form } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 export const EmtScreen = () => {
+  const [isCheckedClientScope, setIsCheckedClientScope] = useState(false);
+
+  const handleOnChangeClientScope = () => {
+    setIsCheckedClientScope(!isCheckedClientScope);
+  };
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
+  };
+
   return (
     <>
       <h1 className="emtTitle">EMT Reporting</h1>
-      <Container size='xl'>
+      <Container size="xl">
         <h2 className="emtSubtitle">Select upload type</h2>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
               <Form.Check
                 inline
+                checked={isCheckedClientScope}
+                onChange={handleOnChangeClientScope}
                 className="checkBox"
                 label="Client Scope"
-                name="SlientScope"
-                type={type}
+                name="ClientScope"
+                type="checkbox"
                 id={`inline-${type}-1`}
               />
               <Form.Check
                 inline
+                checked={isChecked}
+                onChange={handleOnChange}
                 className="checkBox"
                 label="Asset Manager"
                 name="assetManager"
@@ -32,13 +48,44 @@ export const EmtScreen = () => {
             </div>
           ))}
         </Form>
-          <Form>
-        <Form.Group controlId="formFileSm" className="mb-3">
-          <Form.Label>Format: xls, Max size 5MB</Form.Label>
-          <Form.Control type="file" size="sm"/>
-        <Button type='submit' className=' btn rounded-circle dlBtn'><FontAwesomeIcon icon={faDownload} /></Button>
+        <Form>
+          {isCheckedClientScope ? (
+            <Form.Group controlId="formFileSm" className="mb-3">
+              <Form.Label>Format: xls, Max size 5MB</Form.Label>
+              <Form.Control type="file" size="sm" />
+              <Button type="submit" className=" btn rounded-circle dlBtn">
+                <FontAwesomeIcon icon={faDownload} />
+              </Button>
+              <div className="text-center">
+                <Button
+                  type="submit"
+                  className="justify-content-center dlReport "
+                >
+                  Download Report
+                </Button>
+              </div>
+            </Form.Group>
+          ) : (
+            !isCheckedClientScope
+          )}
+        </Form>
+        <Form>
+{ isChecked ? (
+        
+        <Form.Group className="mb-3">
+          <h1 className="exportTitle">Export</h1>
+          <Form.Label>Supplier</Form.Label>
+          <Form.Select>
+            <option>Supplier 1</option>
+            <option>Supplier 2</option>
+            <option>Supplier 3</option>
+            <option>Supplier 4</option>
+          </Form.Select>
+
+          <Form.Label>Labels</Form.Label>
 
         </Form.Group>
+        ) : (!isChecked)}
         </Form>
       </Container>
     </>

@@ -3,6 +3,11 @@
     text-align: start;
 }
 
+.exportTitle {
+    color: black;
+    text-align: start;
+}
+
 .emtSubtitle {
     color: #D1D1D1;
     text-align: left;
@@ -15,6 +20,9 @@
 .dlBtn {
     float: inherit;
     position: relative;
+}
+.dlReport{
+    margin-top: 5%;
 }
 
 .form-control {
