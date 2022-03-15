@@ -21,7 +21,6 @@ export const EmtScreen = () => {
     <>
       <h1 className="emtTitle">EMT Reporting</h1>
       <Container size="xl">
-        <h2 className="emtSubtitle">Select upload type</h2>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -50,9 +49,11 @@ export const EmtScreen = () => {
         </Form>
         <Form>
           {isCheckedClientScope ? (
+
             <Form.Group controlId="formFileSm" className="mb-3">
-              <Form.Label>Format: xls, Max size 5MB</Form.Label>
-              <Form.Control type="file" size="sm" />
+              <h2 className="emtSubtitle">Select upload type</h2>
+              <Form.Label>Format: xls, xlsx or CSV Max size 5MB</Form.Label>
+              <Form.Control type="file" size="sm" accept="xlsx, .xls, .csv" />
               <Button type="submit" className=" btn rounded-circle dlBtn">
                 <FontAwesomeIcon icon={faDownload} />
               </Button>
@@ -82,7 +83,7 @@ export const EmtScreen = () => {
             <option>Supplier 4</option>
           </Form.Select>
 
-          <Form.Label>Labels</Form.Label>
+          <Form.Label><strong>Labels</strong></Form.Label>
 
         </Form.Group>
         ) : (!isChecked)}
