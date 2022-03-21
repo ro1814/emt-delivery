@@ -23,7 +23,8 @@ import axios from "axios";
           "Content-Type": "application/json",
         },
       };
-  
+      //api/users/token/${userInfo.token}
+
       const { data } = await axios.post("/api/users/login", {
         email,
         password,
